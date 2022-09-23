@@ -6,9 +6,11 @@
 /*   By: acaldas <acaldas@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 00:48:32 by acaldas           #+#    #+#             */
-/*   Updated: 2022/09/21 00:51:29 by acaldas          ###   ########.fr       */
+/*   Updated: 2022/09/21 02:40:02 by acaldas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

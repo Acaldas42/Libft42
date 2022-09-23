@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaldas <acaldas@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 01:38:59 by acaldas           #+#    #+#             */
-/*   Updated: 2022/09/21 00:31:51 by acaldas          ###   ########.fr       */
+/*   Created: 2022/09/21 02:37:43 by acaldas           #+#    #+#             */
+/*   Updated: 2022/09/21 02:53:38 by acaldas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ char	*ft_itoa(int n)
 
 static void	fill_tab(char *tab, int nb, int size)
 {
-	int	sign;
+	int	si;
 
-	sign = 1;
+	si = 1;
 	tab[size--] = '\0';
 	if (nb == (1 << 31))
 	{
@@ -39,7 +39,7 @@ static void	fill_tab(char *tab, int nb, int size)
 	}
 	if (nb < 0)
 	{
-		sign = -1;
+		si = -1;
 		nb *= sign;
 	}
 	while (size > 0)
@@ -47,7 +47,7 @@ static void	fill_tab(char *tab, int nb, int size)
 		tab[size--] = (nb % 10) + '0';
 		nb /= 10;
 	}
-	if (sign < 0)
+	if (si < 0)
 		tab[0] = '-';
 	else
 		tab[0] = (nb % 10) + '0';
@@ -55,23 +55,23 @@ static void	fill_tab(char *tab, int nb, int size)
 
 static size_t	get_size(int nb)
 {
-	size_t	count;
+	size_t	cnt;
 
-	count = 1;
+	cnt = 1;
 	if (nb == (1 << 31))
 	{
 		nb = (nb + 1) * -1;
-		count++;
+		cnt++;
 	}
 	if (nb < 0)
 	{
 		nb *= -1;
-		count++;
+		cnt++;
 	}
 	while (nb > 9)
 	{
 		nb /= 10;
-		count++;
+		cnt++;
 	}
-	return (count);
+	return (cnt);
 }
